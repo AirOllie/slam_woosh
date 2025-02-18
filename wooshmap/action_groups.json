@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "project": "woosh",
+  "task_type": [
+    {
+      "no": 0,
+      "name": "默认导航",
+      "type": 1,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 6,
+          "wait_id": 1,
+          "wait_time": 0
+        }
+      ]
+    },
+    {
+      "no": 0,
+      "name": "默认泊车",
+      "type": 2,
+      "order": [
+        {
+          "action": 1
+        }
+      ]
+    },
+    {
+      "no": 0,
+      "name": "默认充电",
+      "type": 3,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 2,
+          "stepctrl_pass": false,
+          "stepctrl_avoid": false,
+          "stepctrl_type": 0,
+          "stepctrl_value": -0.03,
+          "stepctrl_speed": 0.015
+        },
+        {
+          "action": 7
+        }
+      ]
+    },
+    {
+      "no": 0,
+      "name": "默认 举升/辊筒第一层/抓取 上下料",
+      "type": 4,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 5,
+          "roller_layer": 0
+        },
+        {
+          "action": 4
+        }
+      ]
+    },
+    {
+      "no": 1,
+      "name": "默认牵引上料",
+      "type": 4,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 5
+        },
+        {
+          "action": 3
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "name": "默认牵引下料",
+      "type": 4,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 5
+        },
+        {
+          "action": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "version": "1.0.1",
+  "project": "woosh",
+  "task_type": [
+    {
+      "no": 0,
+      "name": "默认导航",
+      "type": 1,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 6,
+          "wait_id": 1,
+          "wait_time": 0
+        }
+      ]
+    },
+    {
+      "no": 1,
+      "name": "对接导航",
+      "type": 1,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 6,
+          "wait_id": 1,
+          "wait_time": 0
+        }
+      ]
+    },
+    {
+      "no": 0,
+      "name": "默认泊车",
+      "type": 2,
+      "order": [
+        {
+          "action": 1
+        }
+      ]
+    },
+    {
+      "no": 0,
+      "name": "OSH200/OSH50h默认充电",
+      "type": 3,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": false,
+          "stepctrl_type": 1,
+          "stepctrl_value": 0.03,
+          "stepctrl_speed": 0.015,
+          "stepctrl_angle": 0.0
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": false,
+          "stepctrl_type": 1,
+          "stepctrl_value": -0.02,
+          "stepctrl_speed": 0.015,
+          "stepctrl_angle": 0.0
+        },
+        {
+          "action": 7
+        }
+      ]
+    },
+    {
+      "no": 1,
+      "name": "OSH50默认充电",
+      "type": 3,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": true,
+          "stepctrl_type": 1,
+          "stepctrl_value": -0.2,
+          "stepctrl_speed": 0.1,
+          "stepctrl_angle": 0.0
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": true,
+          "stepctrl_type": 2,
+          "stepctrl_value": 3.12,
+          "stepctrl_speed": 0.4,
+          "stepctrl_angle": 0.0
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": false,
+          "stepctrl_type": 1,
+          "stepctrl_value": -0.31,
+          "stepctrl_speed": 0.1,
+          "stepctrl_angle": 0.0
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": false,
+          "stepctrl_type": 1,
+          "stepctrl_value": 0.03,
+          "stepctrl_speed": 0.015,
+          "stepctrl_angle": 0.0
+        },
+        {
+          "action": 7
+        }
+      ]
+    },
+    {
+      "no": 0,
+      "name": "默认举升/辊筒 上下料&料车上料",
+      "type": 4,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 5,
+          "roller_layer": 0
+        },
+        {
+          "action": 4
+        }
+      ]
+    },
+    {
+      "no": 1,
+      "name": "默认牵引上料",
+      "type": 4,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 3
+        },
+        {
+          "action": 5
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "name": "默认牵引/料车下料",
+      "type": 4,
+      "order": [
+        {
+          "action": 1
+        },
+        {
+          "action": 5
+        },
+        {
+          "action": 2,
+          "stepctrl_avoid": false,
+          "stepctrl_type": 1,
+          "stepctrl_value": 0.9,
+          "stepctrl_speed": 0.15,
+          "stepctrl_angle": 0.0
+        }
+      ]
+    }
+  ]
+}
