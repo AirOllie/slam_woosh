@@ -42,6 +42,9 @@ class RobotPoseVisualizer:
         
         # Load and display the map
         self.map_img = mpimg.imread(map_path)
+        # Store the map dimensions
+        self.map_height = self.map_img.shape[0]
+        
         self.ax.imshow(self.map_img, cmap='gray')
         
         # Initialize robot position plot (will be updated)
@@ -53,10 +56,11 @@ class RobotPoseVisualizer:
         self.ax.set_xlabel('X (pixels)')
         self.ax.set_ylabel('Y (pixels)')
         self.ax.grid(True)
+        
+        # Plot origin point
+        origin_x, origin_y = world_to_pixel(0, 0, MAP_SETTINGS['resolution'], MAP_SETTINGS['origin'])
+        self.ax.plot(origin_x, self.map_height - origin_y, 'go', markersize=10, label='Origin (0,0)')
         self.ax.legend()
-
-        # Store the map dimensions
-        self.map_height = self.map_img.shape[0]
 
     def update(self, frame):
         """Update function for animation"""
@@ -78,11 +82,11 @@ class RobotPoseVisualizer:
         # Update robot orientation arrow
         arrow_length = 20
         dx = arrow_length * np.cos(pose['theta'])
-        dy = -arrow_length * np.sin(pose['theta'])  # Negative for display coordinates
+        dy = arrow_length * np.sin(pose['theta'])  # Negative for display coordinates
         
         self.robot_arrow.remove()
         self.robot_arrow = self.ax.quiver(robot_x, self.map_height - robot_y, 
-                                        dx, dy, color='r', scale=50)
+                                        dx, dy, color='r', scale=200)
 
         # Add text with current coordinates
         plt.title(f'Robot Pose - X: {pose["x"]:.2f}, Y: {pose["y"]:.2f}, θ: {pose["theta"]:.2f}')
